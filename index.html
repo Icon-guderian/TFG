@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vulnerable Web App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            width: 50%;
+            margin: auto;
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+        input, textarea, button {
+            display: block;
+            width: calc(100% - 22px);
+            margin: 10px auto;
+            padding: 10px;
+            background: #222;
+            color: #0ff;
+            border: 1px solid #0ff;
+            border-radius: 5px;
+        }
+        .success {
+            color: #0f0;
+        }
+        .error {
+            color: #f00;
+        }
+    </style>
+    </head>
+<body>
+    <div class="container">
+        <h2>Login (SQL Injection)</h2>
+        <form id="login_formulario">
+            <input type="text" id="username" placeholder="Usuario">
+            <input type="password" id="password" placeholder="Contraseña">
+            <button type="submit">Ingresar</button>
+        </form>
+
+        <h2>Comentarios (XSS)</h2>
+        <form id="comment_formulario">
+            <textarea id="comment_text" placeholder="Escribe tu comentario..."></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+        <h3>Comentarios:</h3>
+        <ul id="comments-list"></ul>
+
+        <h2>Ping a una IP (Command Injection)</h2>
+        <form id="ping_formulario">
+            <input type="text" id="ip" placeholder="IP a hacer ping">
+            <button type="submit">Ping</button>
+        </form>
+        <pre id="ping-output"></pre>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
